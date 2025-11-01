@@ -1,37 +1,35 @@
-# corine-hotspot-analysis
-Full geospatial data pipeline for hotspot monitoring (2000–2024) using Google Earth Engine. Includes land cover (CORINE, MODIS), vegetation indices (NDVI, EVI, SAVI), climate (TerraClimate), topography (DEM), proximity to water/urban, and roads in subsiding zones.
+# 🛰️ CORINE Hotspot Analysis
 
-# 🌍 CORINE Hotspot Subsidence Analysis (2000–2024)
+A reproducible workflow for identifying and analyzing subsidence hotspots in Great Britain using Earth Observation and Open Geospatial data.
 
-This repository contains a fully reproducible geospatial analysis pipeline for detecting and characterizing ground deformation hotspots across Europe. It combines Sentinel-1 vertical velocity data (EGMS), land cover (CORINE, MODIS), vegetation indices, topographic and climatic variables, and road infrastructure overlays.
+---
 
-## 📦 What's Inside
+## 📌 Project Goal
 
-- **EGMS filtering**: Subsidence extraction from Sentinel-1
-- **Hotspot detection**: Velocity-based grid clustering
-- **LULC overlays**: CORINE (2000–2018), MODIS (2001–2024)
-- **Vegetation indices**: NDVI, EVI, SAVI, MNDWI, NDWI
-- **Climate analysis**: TerraClimate temperature & precipitation
-- **Proximity metrics**: Distance to urban and water
-- **Road risk layers**: Clipped road segments in subsiding zones
-- **Interactive mapping**: Folium-based visualization
+This repository supports the detection and interpretation of **land subsidence hotspots** using **EGMS vertical velocities**, combined with **land cover trajectories** (CORINE, MODIS, S2) and proximity to **road infrastructure**. The outputs are intended to inform climate-sensitive infrastructure risk assessments.
 
-## 🔁 Reproducibility
+---
 
-All scripts are numbered and modular. Outputs are saved in `.csv` and `.geojson` formats. See the `/code/` folder for full pipelines, including extraction, filtering, visualization, and analysis.
+## 📂 What's Included
 
-## 📂 Data
+- 🔻 EGMS-based hotspot extraction and grid generation
+- 🌍 CORINE Land Cover (2000–2018) sampling using Earth Engine
+- 🛰️ MODIS + Sentinel-2 land cover classification (2001–2024)
+- 🌱 NDVI, EVI, SAVI, and NDWI vegetation metrics (Landsat + Sentinel)
+- 🚧 Road network intersection with subsidence hotspots (OpenRoads)
+- 🗂️ GeoJSON/CSV exports of hotspot grids, points, road segments
 
-Final datasets (hotspot points, roads, summaries) will be published via Zenodo and linked here.
-
-## 🧪 Citation
-
-If you use this pipeline or any output data, please cite this repository or the associated publication (TBD).
+---
 
 ## 🛠️ Requirements
 
-Python 3.9+  
-Install dependencies:  
+Install these packages before running locally or in Colab:
+
 ```bash
-pip install -r requirements.txt
+earthengine-api
+geopandas
+pandas
+shapely
+folium
+
 
