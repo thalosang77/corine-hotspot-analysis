@@ -1,37 +1,37 @@
 # corine-hotspot-analysis
 Full geospatial data pipeline for hotspot monitoring (2000–2024) using Google Earth Engine. Includes land cover (CORINE, MODIS), vegetation indices (NDVI, EVI, SAVI), climate (TerraClimate), topography (DEM), proximity to water/urban, and roads in subsiding zones.
 
-# CORINE Hotspot Analysis (2000–2024)
+# 🌍 CORINE Hotspot Subsidence Analysis (2000–2024)
 
-This repository contains the full geospatial analysis pipeline for monitoring environmental hotspots in Europe using Earth Observation data from 2000 to 2024.
+This repository contains a fully reproducible geospatial analysis pipeline for detecting and characterizing ground deformation hotspots across Europe. It combines Sentinel-1 vertical velocity data (EGMS), land cover (CORINE, MODIS), vegetation indices, topographic and climatic variables, and road infrastructure overlays.
 
-## 🔍 Features
+## 📦 What's Inside
 
-- Land cover change: CORINE & MODIS
-- Vegetation indices: NDVI, EVI, SAVI, MNDWI, NDWI
-- Terrain analysis: Elevation, Slope, Aspect (COPERNICUS DEM)
-- Climate: Seasonal & annual precipitation + temperature (TerraClimate)
-- Proximity metrics: Distance to water, urban
-- Infrastructure: Roads intersecting with subsidence zones
+- **EGMS filtering**: Subsidence extraction from Sentinel-1
+- **Hotspot detection**: Velocity-based grid clustering
+- **LULC overlays**: CORINE (2000–2018), MODIS (2001–2024)
+- **Vegetation indices**: NDVI, EVI, SAVI, MNDWI, NDWI
+- **Climate analysis**: TerraClimate temperature & precipitation
+- **Proximity metrics**: Distance to urban and water
+- **Road risk layers**: Clipped road segments in subsiding zones
+- **Interactive mapping**: Folium-based visualization
 
-## 📁 Data Outputs
+## 🔁 Reproducibility
 
-All CSV and GeoJSON outputs are reproducible and structured for spatial modeling:
-- `hotspot_points_with_coords.csv`
-- `hotspots_MODIS_LULC_2001_2024.csv`
-- `hotspots_S2_NDVI_DJF_2018.csv`
-- `roads_in_subsidence_zones.geojson`
-- And more…
+All scripts are numbered and modular. Outputs are saved in `.csv` and `.geojson` formats. See the `/code/` folder for full pipelines, including extraction, filtering, visualization, and analysis.
 
-## 💻 Reproducibility
+## 📂 Data
 
-All data extraction scripts are written in Python using the Google Earth Engine API.  
-You can reproduce any dataset using the exact scripts included in this repository.
+Final datasets (hotspot points, roads, summaries) will be published via Zenodo and linked here.
 
-## 🧾 Citation
+## 🧪 Citation
 
-Please cite this repository or the companion paper if using the data or pipeline.
+If you use this pipeline or any output data, please cite this repository or the associated publication (TBD).
 
-## 📜 License
+## 🛠️ Requirements
 
-See [LICENSE](./LICENSE) for usage rights.
+Python 3.9+  
+Install dependencies:  
+```bash
+pip install -r requirements.txt
+
